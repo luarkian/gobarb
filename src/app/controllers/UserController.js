@@ -4,7 +4,7 @@ import e from 'express';
 
 class UserController {
   async store(req, res) {
-    const schema = Yup.objetct().shape({
+    const schema = Yup.object().shape({
       name: Yup.string().required(),
       email: Yup.string()
         .email()
@@ -34,7 +34,7 @@ class UserController {
 
   async update(req, res) {
     const { email, oldPassword } = req.body;
-    const schema = Yup.objetct().shape({
+    const schema = Yup.object().shape({
       name: Yup.string(),
       email: Yup.string().email(),
       oldPassword: Yup.string().min(6),
